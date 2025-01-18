@@ -7,7 +7,7 @@ class TestInventario(unittest.TestCase):
     def setUp(self):
         self.producto1 = Producto("Manzanas", 1.5, 10)
         self.producto2 = Producto("Naranjas", 2.0, 5)
-        self.producto3 = Producto("Manzanas", 1.5, 15)  # Nuevo lote del mismo producto
+        self.producto3 = Producto("Manzanas", 1.5, 15)
         self.inventario = Inventario()
 
     def test_agregar_producto_nuevo(self):
@@ -17,7 +17,7 @@ class TestInventario(unittest.TestCase):
 
     def test_agregar_producto_existente(self):
         self.inventario.agregar_producto(self.producto1)
-        self.inventario.agregar_producto(self.producto3)  # Nuevo lote del mismo producto
+        self.inventario.agregar_producto(self.producto3)
         self.assertEqual(self.inventario.productos["Manzanas"].cantidad, 25)
 
     def test_eliminar_producto_existente(self):
